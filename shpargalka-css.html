@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Шпаргалка по CSS</title>
+  <style>
+    body { margin: 0 auto; max-width: 860px; padding: 20px 30px; font-family: Arial, sans-serif; font-size: 17px; line-height: 1.5; color: #3b2a1a; background: #fffaf2; }
+    h1 { color: #5c3d1e; }
+    h2 { margin-top: 36px; padding-bottom: 4px; border-bottom: 2px solid #d9c3a0; color: #5c3d1e; }
+    table { width: 100%; border-collapse: collapse; }
+    td { padding: 8px 10px; border-bottom: 1px solid #eadbc0; vertical-align: top; }
+    td:first-child { width: 42%; }
+    code { font-family: Consolas, monospace; font-size: 15px; background: #f3e3c3; padding: 1px 5px; border-radius: 4px; }
+    pre { background: #3b2a1a; color: #f3e3c3; padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 15px; line-height: 1.4; }
+    pre code { background: none; padding: 0; color: inherit; }
+  </style>
+</head>
+<body>
+
+<h1>Шпаргалка по CSS для лендинга</h1>
+<p>Все свойства, которые нужны для сайта «Лесопил». CSS пишем в файле <code>style.css</code>, который подключён в <code>&lt;head&gt;</code> строкой <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</p>
+
+<h2>1. Как устроено правило</h2>
+<pre><code>селектор {
+  свойство: значение;
+  свойство: значение;
+}
+
+/* пример */
+h1 {
+  color: white;      /* цвет текста */
+  font-size: 44px;   /* размер */
+}</code></pre>
+<p>Селектор говорит, <b>к чему</b> применить стиль. В фигурных скобках написано, <b>как</b> это должно выглядеть. После каждого свойства ставится точка с запятой. <code>/* ... */</code> это комментарий.</p>
+
+<h2>2. Селекторы: к чему применить</h2>
+<table>
+  <tr><td><code>body { }</code></td><td>По тегу: все элементы <code>&lt;body&gt;</code>.</td></tr>
+  <tr><td><code>.card { }</code></td><td>По классу: все элементы с <code>class="card"</code>. Точка перед именем.</td></tr>
+  <tr><td><code>#about { }</code></td><td>По id: элемент с <code>id="about"</code>. Решётка перед именем.</td></tr>
+  <tr><td><code>nav a { }</code></td><td>Вложенные: ссылки, которые находятся внутри <code>&lt;nav&gt;</code>.</td></tr>
+  <tr><td><code>.card img { }</code></td><td>Картинки внутри карточек.</td></tr>
+  <tr><td><code>.hero h1 { }</code></td><td>Заголовок <code>h1</code> внутри блока <code>.hero</code>.</td></tr>
+</table>
+
+<h2>3. Цвета</h2>
+<p>Цвет пишем словом по-английски, маленькими буквами и без пробелов.</p>
+<table>
+  <tr><td><code>color: black;</code></td><td>Цвет <b>текста</b>.</td></tr>
+  <tr><td><code>background: wheat;</code></td><td>Цвет <b>фона</b>.</td></tr>
+</table>
+<p>Цвета, которые пригодятся для «Лесопила»:</p>
+<table>
+<tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:white"></span><code>white</code></td><td>белый</td></tr><tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:black"></span><code>black</code></td><td>чёрный</td></tr><tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:gray"></span><code>gray</code></td><td>серый</td></tr><tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:lightgray"></span><code>lightgray</code></td><td>светло-серый</td></tr><tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:floralwhite"></span><code>floralwhite</code></td><td>светло-бежевый</td></tr><tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:wheat"></span><code>wheat</code></td><td>бежевый</td></tr><tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:tan"></span><code>tan</code></td><td>тёмно-бежевый</td></tr><tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:saddlebrown"></span><code>saddlebrown</code></td><td>коричневый</td></tr><tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:darkolivegreen"></span><code>darkolivegreen</code></td><td>тёмно-зелёный</td></tr><tr><td><span style="display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #999;vertical-align:middle;margin-right:8px;background:green"></span><code>green</code></td><td>зелёный</td></tr>
+</table>
+
+<h2>4. Текст</h2>
+<table>
+  <tr><td><code>font-family: Arial, sans-serif;</code></td><td>Шрифт.</td></tr>
+  <tr><td><code>font-size: 18px;</code></td><td>Размер текста.</td></tr>
+  <tr><td><code>font-weight: bold;</code></td><td>Жирный текст.</td></tr>
+  <tr><td><code>line-height: 1.5;</code></td><td>Расстояние между строками (1.5 значит в полтора раза больше обычного).</td></tr>
+  <tr><td><code>text-align: center;</code></td><td>Выравнивание: <code>left</code>, <code>center</code>, <code>right</code>.</td></tr>
+  <tr><td><code>text-decoration: none;</code></td><td>Убрать подчёркивание у ссылки.</td></tr>
+  <tr><td><code>text-shadow: 0 0 10px black;</code></td><td>Тень у текста, чтобы его было видно на фото.</td></tr>
+</table>
+
+<h2>5. Отступы, рамки и размеры</h2>
+<table>
+  <tr><td><code>padding: 20px;</code></td><td>Отступ <b>внутри</b> элемента, от края до содержимого.</td></tr>
+  <tr><td><code>padding: 15px 40px;</code></td><td>Два числа: сверху и снизу 15px, слева и справа 40px.</td></tr>
+  <tr><td><code>margin: 0;</code></td><td>Отступ <b>снаружи</b>, от соседних элементов. У <code>body</code> ставим 0, чтобы убрать белую рамку.</td></tr>
+  <tr><td><code>margin-left: 20px;</code></td><td>Внешний отступ только слева. Есть ещё <code>-right</code>, <code>-top</code>, <code>-bottom</code>.</td></tr>
+  <tr><td><code>border: 1px solid lightgray;</code></td><td>Рамка: толщина, тип линии, цвет.</td></tr>
+  <tr><td><code>border-radius: 8px;</code></td><td>Скруглённые углы.</td></tr>
+  <tr><td><code>width: 100%;</code></td><td>Ширина. 100% значит на всю ширину родителя (например, картинка на всю карточку).</td></tr>
+</table>
+<pre><code>margin  →  [ border  →  padding  →  содержимое ]
+снаружи      рамка      внутри</code></pre>
+
+<h2>6. Картинка на фоне</h2>
+<pre><code>.hero {
+  background: url("doska.jpg");  /* картинка на фоне */
+  background-size: cover;        /* растянуть на весь блок */
+}</code></pre>
+
+<h2>7. Расположение: flex</h2>
+<table>
+  <tr><td><code>display: flex;</code></td><td>Ставит всё, что лежит внутри элемента, в один ряд.</td></tr>
+  <tr><td><code>justify-content: space-between;</code></td><td>Разносит элементы по краям: первый слева, последний справа. Так в шапке название слева, меню справа.</td></tr>
+  <tr><td><code>gap: 20px;</code></td><td>Расстояние между элементами в ряду.</td></tr>
+  <tr><td><code>flex: 1;</code></td><td>Пишем у элементов внутри ряда. Все становятся одинаковой ширины.</td></tr>
+  <tr><td><code>display: inline-block;</code></td><td>Для ссылки-кнопки: элемент стоит в строке, но отступы <code>padding</code> работают правильно.</td></tr>
+</table>
+<pre><code>.cards { display: flex; gap: 20px; }   /* ряд карточек */
+.card  { flex: 1; }                    /* одинаковая ширина */</code></pre>
+
+<h2>8. Шапка и прокрутка</h2>
+<table>
+  <tr><td><code>position: sticky;</code><br><code>top: 0;</code></td><td>Шапка «прилипает» к верху окна и не уезжает при прокрутке. Нужны обе строки.</td></tr>
+  <tr><td><code>html { scroll-behavior: smooth; }</code></td><td>Плавная прокрутка при клике на пункт меню.</td></tr>
+  <tr><td><code>section { scroll-margin-top: 50px; }</code></td><td>Отступ сверху при переходе к разделу, чтобы шапка не закрывала заголовок.</td></tr>
+</table>
+
+<h2>9. Частые ошибки</h2>
+<table>
+  <tr><td>Стиль не применяется</td><td>Опечатка в имени класса, или забыли точку: <code>card { }</code> вместо <code>.card { }</code>.</td></tr>
+  <tr><td>Не работает всё после какой-то строки</td><td>Забыли <code>;</code> после свойства или <code>}</code> в конце правила.</td></tr>
+  <tr><td>Фон-картинки не видно</td><td>Ошибка в имени файла внутри <code>url("...")</code>.</td></tr>
+  <tr><td>Шапка всё равно уезжает</td><td>Написали <code>position: sticky;</code>, но забыли <code>top: 0;</code>.</td></tr>
+  <tr><td>Карточки не встают в ряд</td><td><code>display: flex;</code> нужно писать у <b>родителя</b> (<code>.cards</code>), а не у каждой карточки.</td></tr>
+  <tr><td>Число без единиц</td><td><code>padding: 20;</code> не сработает. Нужно <code>20px</code>.</td></tr>
+</table>
+
+</body>
+</html>

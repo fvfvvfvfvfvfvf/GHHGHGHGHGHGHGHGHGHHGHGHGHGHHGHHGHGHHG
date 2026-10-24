@@ -1,0 +1,125 @@
+/* ШАБЛОН СТИЛЕЙ. Найди все комментарии «ИСПРАВЬ». */
+
+/* ИСПРАВЬ: при клике на меню страница прыгает резко. Сделай плавную прокрутку */
+html {
+}
+
+/* Вся страница */
+body {
+  margin: 0;                      /* убираем белую рамку */
+  font-family: Arial, sans-serif; /* шрифт */
+  font-size: 18px;                /* размер текста */
+  line-height: 1.5;               /* расстояние между строками */
+  color: rgb(0, 0, 0);                 
+  background: floralwhite;              
+
+/* Шапка */
+header {
+  /* ИСПРАВЬ: шапка уезжает при прокрутке, а должна оставаться наверху */
+  display: flex;                  /* название и меню в одну строку */
+  justify-content: space-between; /* название слева, меню справа */
+  padding: 15px 40px;             /* отступы внутри */
+  background: saddlebrown;               /* ИСПРАВЬ: коричневый фон (saddlebrown) */
+  color: white;
+}
+
+/* Ссылки меню */
+nav a {
+  margin-left: 20px;              /* расстояние между пунктами */
+  color: rgb(160, 223, 237);
+  text-decoration: none;
+  /* ИСПРАВЬ: убери подчёркивание у ссылок */
+}
+
+/* Все разделы */
+section {
+  padding: 50px 40px;  
+  background: rgb(172, 112, 0);
+  /* ИСПРАВЬ: после перехода по меню шапка закрывает заголовок раздела */
+}
+
+/* Разделы со вторым цветом фона */
+.light {
+  background: wheat;         /* ИСПРАВЬ: бежевый (wheat) */
+}
+
+/* Первый экран */
+.hero {
+  padding: 120px 40px;            /* высокий блок */
+  text-align: center;             /* всё по центру */
+  color:white;
+  text-shadow: 0 0 10px black;
+  background: url("doska.jpg");  /* картинка на фоне */
+  background-size: cover;                 /* ИСПРАВЬ: поставь на фон картинку doska.jpg */
+  /* ИСПРАВЬ: картинка должна растягиваться на весь блок, а текст быть белым и с тенью */
+  
+}
+.hero2 {
+  padding: 120px 40px;            /* высокий блок */
+  text-align: center;             /* всё по центру */
+  color:white;
+  text-shadow: 0 0 10px black;
+  background: url("kamaz-54901-tyagach-4.jpg");  /* картинка на фоне */
+  background-size: cover;                 /* ИСПРАВЬ: поставь на фон картинку doska.jpg */
+  /* ИСПРАВЬ: картинка должна растягиваться на весь блок, а текст быть белым и с тенью */
+}
+.hero h1 {
+  font-size: 30px;                /* ИСПРАВЬ: заголовок должен быть крупнее */
+}
+
+/* Кнопка */
+.button {
+  display: inline-block;          /* чтобы отступы кнопки работали */
+  padding: 15px 30px;             /* размер кнопки */
+  background: gray;               /* ИСПРАВЬ: зелёный (darkolivegreen) */
+  color: white;
+  text-decoration: none;          /* без подчёркивания */
+  /* ИСПРАВЬ: сделай скруглённые углы */
+}
+
+/* Карточки товаров */
+.cards {
+  display: flex;
+  gap: 50px;
+  
+}
+           
+
+/* Одна карточка */
+.card {
+  padding: 20px;
+  background: white;
+  border: 1px solid lightgray;
+  flex: 1; 
+  border-radius: 8px;
+}
+
+
+/* Картинка в карточке */
+.card img {
+  width: 100%;  
+height: 200px;
+object-fit: cover;
+}
+
+/* Цена */
+.price {
+  font-weight: bold;
+  color: chartreuse;
+  /* ИСПРАВЬ: цена должна быть крупнее и зелёного цвета (darkolivegreen) */
+}
+
+/* ИСПРАВЬ: сделай стиль для заглушки «Фото скоро» у вагонки */
+
+/* Подвал */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: gray;               /* ИСПРАВЬ: как у шапки */
+  color: white;
+}
+footer a {
+  margin-left: 20px;              /* расстояние между пунктами */
+  color: rgb(160, 223, 237);
+  text-decoration: none;
+}

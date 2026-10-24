@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Шпаргалка по HTML</title>
+  <style>
+    body { margin: 0 auto; max-width: 860px; padding: 20px 30px; font-family: Arial, sans-serif; font-size: 17px; line-height: 1.5; color: #3b2a1a; background: #fffaf2; }
+    h1 { color: #5c3d1e; }
+    h2 { margin-top: 36px; padding-bottom: 4px; border-bottom: 2px solid #d9c3a0; color: #5c3d1e; }
+    table { width: 100%; border-collapse: collapse; }
+    td { padding: 8px 10px; border-bottom: 1px solid #eadbc0; vertical-align: top; }
+    td:first-child { width: 42%; }
+    code { font-family: Consolas, monospace; font-size: 15px; background: #f3e3c3; padding: 1px 5px; border-radius: 4px; }
+    pre { background: #3b2a1a; color: #f3e3c3; padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 15px; line-height: 1.4; }
+    pre code { background: none; padding: 0; color: inherit; }
+  </style>
+</head>
+<body>
+
+<h1>Шпаргалка по HTML для лендинга</h1>
+<p>Все теги, которые нужны для сайта «Лесопил». Тег пишется в угловых скобках. Почти у всех тегов есть открывающий <code>&lt;p&gt;</code> и закрывающий <code>&lt;/p&gt;</code>, а содержимое стоит между ними.</p>
+
+<h2>1. Каркас страницы</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;ООО «Лесопил»&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ... всё, что видно на странице ...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<table>
+  <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Первая строка любой страницы: «это HTML».</td></tr>
+  <tr><td><code>&lt;html lang="ru"&gt;</code></td><td>Вся страница. <code>lang="ru"</code> значит, что язык русский.</td></tr>
+  <tr><td><code>&lt;head&gt;</code></td><td>Служебная часть, на странице не видна.</td></tr>
+  <tr><td><code>&lt;meta charset="UTF-8"&gt;</code></td><td>Кодировка. Без неё русские буквы превращаются в «кракозябры».</td></tr>
+  <tr><td><code>&lt;title&gt;</code></td><td>Название вкладки в браузере.</td></tr>
+  <tr><td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></td><td>Подключает файл со стилями CSS.</td></tr>
+  <tr><td><code>&lt;body&gt;</code></td><td>Всё, что видно на странице.</td></tr>
+  <tr><td><code>&lt;!-- текст --&gt;</code></td><td>Комментарий. Браузер его не показывает.</td></tr>
+</table>
+
+<h2>2. Крупные блоки страницы</h2>
+<table>
+  <tr><td><code>&lt;header&gt;</code></td><td>Шапка: название и меню.</td></tr>
+  <tr><td><code>&lt;nav&gt;</code></td><td>Меню, внутри ссылки.</td></tr>
+  <tr><td><code>&lt;section&gt;</code></td><td>Раздел страницы: «О компании», «Товары», «Контакты».</td></tr>
+  <tr><td><code>&lt;footer&gt;</code></td><td>Подвал в самом низу.</td></tr>
+  <tr><td><code>&lt;div&gt;</code></td><td>Простой блок-коробка, чтобы сгруппировать элементы. Например, одна карточка товара.</td></tr>
+</table>
+<p>Сами по себе эти теги никак не выглядят. Внешний вид им задаёт CSS.</p>
+
+<h2>3. Текст</h2>
+<table>
+  <tr><td><code>&lt;h1&gt;Заголовок&lt;/h1&gt;</code></td><td>Главный заголовок. На странице один.</td></tr>
+  <tr><td><code>&lt;h2&gt;</code></td><td>Заголовок раздела.</td></tr>
+  <tr><td><code>&lt;h3&gt;</code></td><td>Заголовок поменьше, например название товара.</td></tr>
+  <tr><td><code>&lt;p&gt;Абзац&lt;/p&gt;</code></td><td>Абзац текста.</td></tr>
+  <tr><td><code>&lt;b&gt;жирный&lt;/b&gt;</code></td><td>Жирный текст внутри абзаца.</td></tr>
+</table>
+
+<h2>4. Список</h2>
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;Своё производство&lt;/li&gt;
+  &lt;li&gt;Доставка по городу&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p><code>&lt;ul&gt;</code> это список с точками, <code>&lt;li&gt;</code> один пункт. Пункты пишутся только внутри <code>&lt;ul&gt;</code>.</p>
+
+<h2>5. Картинка</h2>
+<pre><code>&lt;img src="brus.jpg" alt="Брус"&gt;</code></pre>
+<table>
+  <tr><td><code>src</code></td><td>Имя файла картинки. Файл лежит в той же папке, что и <code>index.html</code>.</td></tr>
+  <tr><td><code>alt</code></td><td>Текст, который видно, если картинка не загрузилась.</td></tr>
+</table>
+<p>У <code>&lt;img&gt;</code> нет закрывающего тега.</p>
+
+<h2>6. Ссылки</h2>
+<table>
+  <tr><td><code>&lt;a href="#about"&gt;О компании&lt;/a&gt;</code></td><td>К разделу с <code>id="about"</code> на этой же странице.</td></tr>
+  <tr><td><code>&lt;a href="#top"&gt;Наверх&lt;/a&gt;</code></td><td>К элементу с <code>id="top"</code>, обычно это шапка.</td></tr>
+  <tr><td><code>&lt;a href="about.html"&gt;</code></td><td>На другую страницу сайта.</td></tr>
+  <tr><td><code>&lt;a href="about.html#team"&gt;</code></td><td>На другую страницу и сразу к её разделу.</td></tr>
+  <tr><td><code>&lt;a href="#"&gt;</code></td><td>Ссылка-пустышка, никуда не ведёт. Её нужно заменить.</td></tr>
+</table>
+<p>Решётка <code>#</code> в ссылке значит «найди элемент с таким id». В самом <code>id</code> решётку не пишут.</p>
+
+<h2>7. Атрибуты id и class</h2>
+<table>
+  <tr><td><code>&lt;section id="about"&gt;</code></td><td><b>id</b> это уникальное имя элемента. На странице встречается только один раз. К нему ведут ссылки <code>#about</code>.</td></tr>
+  <tr><td><code>&lt;div class="card"&gt;</code></td><td><b>class</b> это имя группы. Можно дать многим элементам, и все они получат одинаковый стиль <code>.card</code> из CSS.</td></tr>
+  <tr><td><code>&lt;section id="products" class="light"&gt;</code></td><td>У элемента может быть и id, и class одновременно.</td></tr>
+</table>
+<p>Имена id и классов пишем латиницей, без пробелов: <code>about</code>, <code>no-photo</code>.</p>
+
+<h2>8. Карточка товара целиком</h2>
+<pre><code>&lt;div class="card"&gt;
+  &lt;img src="doska.jpg" alt="Доска"&gt;
+  &lt;h3&gt;Доска обрезная&lt;/h3&gt;
+  &lt;p&gt;Ровная доска без коры, длина 6 метров.&lt;/p&gt;
+  &lt;p class="price"&gt;от 14 000 ₽ за м³&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h2>9. Частые ошибки</h2>
+<table>
+  <tr><td>Меню никуда не ведёт</td><td>В <code>href</code> забыли решётку или имя не совпадает с <code>id</code>: <code>href="#About"</code> и <code>id="about"</code> это разные имена.</td></tr>
+  <tr><td>Картинки не видно</td><td>Имя файла в <code>src</code> написано с ошибкой или файл лежит в другой папке.</td></tr>
+  <tr><td>Стили не работают</td><td>Не подключён <code>style.css</code> или в <code>class</code> опечатка.</td></tr>
+  <tr><td>Вся страница «поехала»</td><td>Забыли закрыть тег, например <code>&lt;/div&gt;</code> или <code>&lt;/section&gt;</code>.</td></tr>
+  <tr><td>Вместо букв «кракозябры»</td><td>Нет строки <code>&lt;meta charset="UTF-8"&gt;</code>.</td></tr>
+</table>
+
+</body>
+</html>
